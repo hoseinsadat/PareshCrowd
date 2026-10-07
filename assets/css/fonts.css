@@ -1,0 +1,63 @@
+/**
+*	Name:       Modam Fonts (FaNum)
+*	Author:     Naser Khadem
+*	Website:    http://fontiran.com
+*	Copyright:  Commercial/Proprietary Software
+*
+*	Modam fonts are proprietary software. For the terms of use, see www.fontiran.com.
+*	Adapted from the package's WebFonts/fontiran.css (base weights only).
+**/
+
+@font-face {
+	font-family: ModamFaNumWeb;
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url('../fonts/modam/ModamFaNumWeb-Light.woff2') format('woff2'),
+	     url('../fonts/modam/ModamFaNumWeb-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: ModamFaNumWeb;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/modam/ModamFaNumWeb-Regular.woff2') format('woff2'),
+	     url('../fonts/modam/ModamFaNumWeb-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: ModamFaNumWeb;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('../fonts/modam/ModamFaNumWeb-Medium.woff2') format('woff2'),
+	     url('../fonts/modam/ModamFaNumWeb-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: ModamFaNumWeb;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('../fonts/modam/ModamFaNumWeb-SemiBold.woff2') format('woff2'),
+	     url('../fonts/modam/ModamFaNumWeb-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: ModamFaNumWeb;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('../fonts/modam/ModamFaNumWeb-Bold.woff2') format('woff2'),
+	     url('../fonts/modam/ModamFaNumWeb-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: ModamFaNumWeb;
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url('../fonts/modam/ModamFaNumWeb-ExtraBold.woff2') format('woff2'),
+	     url('../fonts/modam/ModamFaNumWeb-ExtraBold.woff') format('woff');
+}

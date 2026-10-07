@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Paresh design tokens
+   Source: PareshCrowd Color Sheet (Ver Aug 2026)
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette: primary ---- */
+  --cream: #EFEEE7;          /* Primary 1 */
+  --blush: #F6D7CF;          /* Primary 2 */
+  --navy: #0E1938;           /* Primary 3 */
+
+  /* ---- Brand palette: secondary ---- */
+  --white: #FFFFFF;
+  --blue: #0068FF;
+  --coral: #F9564D;
+  --lime: #A3E96B;
+  --green: #0EA665;
+  --black: #0F0F0F;
+
+  /* ---- Derived tints (mixed from the palette, not new hues) ---- */
+  --cream-deep: #E4E2D8;
+  --cream-soft: #F6F5F0;
+  --blush-soft: #FBEDE9;
+  --navy-90: #1B274A;
+  --navy-80: #26335A;
+  --blue-600: #0057D6;
+  --blue-50: #E8F1FF;
+  --green-700: #0B8452;
+  --green-50: #E3F5EC;
+  --coral-700: #D9362D;
+  --coral-50: #FEEBEA;
+  --lime-50: #EEF9E3;
+
+  /* ---- Semantic ---- */
+  --bg: var(--cream);
+  --surface: var(--white);
+  --surface-muted: var(--cream-soft);
+  --surface-warm: var(--blush);
+  --surface-dark: var(--navy);
+
+  --text: var(--navy);
+  --text-muted: rgba(14, 25, 56, 0.66);
+  --text-subtle: rgba(14, 25, 56, 0.5);
+  --text-on-dark: var(--cream);
+  --text-on-dark-muted: rgba(239, 238, 231, 0.7);
+
+  --border: rgba(14, 25, 56, 0.1);
+  --border-strong: rgba(14, 25, 56, 0.18);
+  --border-on-dark: rgba(239, 238, 231, 0.14);
+
+  --action: var(--blue);
+  --action-hover: var(--blue-600);
+  --positive: var(--green);
+  --positive-text: var(--green-700);
+  --risk: var(--coral);
+  --risk-text: var(--coral-700);
+  --highlight: var(--lime);
+
+  /* ---- Gradients ---- */
+  --grad-primary: linear-gradient(100deg, var(--cream) 0%, var(--blush) 45%, var(--navy) 100%);
+  --grad-hero: radial-gradient(120% 90% at 0% 100%, rgba(14, 25, 56, 0.95) 0%, rgba(14, 25, 56, 0) 55%),
+               linear-gradient(160deg, var(--cream) 0%, var(--blush) 55%, #C9B4B8 100%);
+  --grad-mesh:
+    radial-gradient(60% 80% at 100% 0%, var(--blue) 0%, rgba(0, 104, 255, 0) 60%),
+    radial-gradient(50% 70% at 60% 30%, var(--coral) 0%, rgba(249, 86, 77, 0) 65%),
+    radial-gradient(50% 70% at 30% 90%, var(--lime) 0%, rgba(163, 233, 107, 0) 60%),
+    radial-gradient(60% 90% at 0% 20%, var(--green) 0%, rgba(14, 166, 101, 0) 65%),
+    radial-gradient(40% 60% at 100% 100%, var(--white) 0%, rgba(255, 255, 255, 0) 70%),
+    var(--black);
+
+  /* ---- Typography ---- */
+  --font: "ModamFaNumWeb", "Vazirmatn", Tahoma, system-ui, sans-serif;
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-22: 1.375rem;
+  --fs-28: 1.75rem;
+  --fs-36: 2.25rem;
+  --fs-48: clamp(2.25rem, 1.6rem + 2.2vw, 3rem);
+  --fs-64: clamp(2.5rem, 1.5rem + 3.6vw, 4rem);
+  --lh-tight: 1.25;
+  --lh-body: 1.85;
+
+  /* ---- Spacing (4px base) ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --section-y: clamp(64px, 6vw + 32px, 120px);
+
+  /* ---- Radius ---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-2xl: 32px;
+  --r-pill: 999px;
+
+  /* ---- Elevation (navy-tinted) ---- */
+  --shadow-sm: 0 1px 2px rgba(14, 25, 56, 0.06), 0 1px 1px rgba(14, 25, 56, 0.04);
+  --shadow-md: 0 8px 24px -8px rgba(14, 25, 56, 0.14), 0 2px 6px rgba(14, 25, 56, 0.05);
+  --shadow-lg: 0 24px 48px -16px rgba(14, 25, 56, 0.22), 0 4px 12px rgba(14, 25, 56, 0.06);
+  --ring: 0 0 0 3px rgba(0, 104, 255, 0.35);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur: 280ms;
+  --dur-slow: 700ms;
+
+  /* ---- Layout ---- */
+  --container: 1240px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --header-h: 72px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+  }
+}

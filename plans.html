@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fa" dir="rtl" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>طرح‌های سرمایه‌گذاری | پرش</title>
+  <meta name="description" content="پرش، سکوی تأمین مالی جمعی دارای مجوز فرابورس. روی کسب‌وکارهای واقعی سرمایه‌گذاری کنید؛ سود، ریسک و ضمانت هر طرح پیش از تصمیم روشن است.">
+  <meta name="theme-color" content="#EFEEE7">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/modam/ModamFaNumWeb-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/modam/ModamFaNumWeb-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="plans">
+  <a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo logo--brand" href="index.html" aria-label="پرش، صفحه اصلی">
+        <svg class="logo__mark" viewBox="0 0 120 96" fill="none" aria-hidden="true"><g stroke-width="18" stroke-linejoin="round"><path d="M-10 33H24L48 9H130"/><path d="M-10 59H36L60 35H130"/><path d="M-10 85H48L72 61H130"/></g></svg>
+        <span>پرش<span class="logo__sub">سکوی تأمین مالی جمعی</span></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="منوی اصلی">
+        <a href="plans.html" aria-current="page">طرح‌ها</a>
+        <a href="index.html#how">چطور کار می‌کند</a>
+        <a href="index.html#why">چرا پرش</a>
+        <a href="index.html#calculator">محاسبه سود</a>
+        <a href="index.html#faq">سؤالات</a>
+        <a class="site-nav__login" href="#">ورود / ثبت‌نام</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn--outline btn--sm" href="#">ورود / ثبت‌نام</a>
+        <a class="btn btn--primary btn--sm" href="plans.html">شروع سرمایه‌گذاری</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="باز کردن منو"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <nav aria-label="مسیر صفحه"><ol class="breadcrumb"><li><a href="index.html">خانه</a></li><li aria-current="page">طرح‌ها</li></ol></nav>
+        <div class="page-head__grid">
+          <div>
+            <h1 class="h1">طرح‌های سرمایه‌گذاری</h1>
+            <p class="lead">همه طرح‌ها پیش از انتشار ارزیابی و در فرابورس ثبت شده‌اند. سود، ضمانت و ریسک هر طرح را کنار هم مقایسه کنید.</p>
+          </div>
+          <div class="page-stats">
+            <div class="stat"><div class="stat__value" id="sum-active">—</div><div class="stat__label">طرح در حال جذب</div></div>
+            <div class="stat"><div class="stat__value"><span id="sum-rate">—</span><small>٪</small></div><div class="stat__label">بالاترین سود پیش‌بینی‌شده</div></div>
+            <div class="stat"><div class="stat__value"><span id="sum-need">—</span><small>تومان</small></div><div class="stat__label">ظرفیت باقی‌مانده</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="filters">
+      <div class="container filters__bar">
+        <div class="segmented" role="group" aria-label="وضعیت طرح">
+          <button type="button" data-filter-status="all" aria-pressed="true">همه</button>
+          <button type="button" data-filter-status="active" aria-pressed="false">در حال جذب</button>
+          <button type="button" data-filter-status="soon" aria-pressed="false">به‌زودی</button>
+          <button type="button" data-filter-status="funded" aria-pressed="false">تأمین‌شده</button>
+        </div>
+        <button class="chip filters__toggle" id="filters-toggle" type="button" aria-expanded="false" aria-controls="filters-panel">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+          فیلترها
+        </button>
+        <div class="filters__panel" id="filters-panel">
+          <label class="visually-hidden" for="f-industry">صنعت</label>
+          <select class="select" id="f-industry"></select>
+          <label class="visually-hidden" for="f-guarantee">نوع ضمانت</label>
+          <select class="select" id="f-guarantee"></select>
+        </div>
+        <div class="filters__sort">
+          <label class="text-sm text-muted" for="f-sort">مرتب‌سازی</label>
+          <select class="select" id="f-sort" style="min-height:40px;border-radius:999px;font-size:14px;width:auto">
+            <option value="recommended">پیشنهاد پرش</option>
+            <option value="rate">بیشترین سود</option>
+            <option value="months">کوتاه‌ترین مدت</option>
+            <option value="progress">نزدیک به تکمیل</option>
+            <option value="risk">کمترین ریسک</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:32px">
+      <div class="container">
+        <div class="results-bar">
+          <b id="plans-count" aria-live="polite">—</b>
+          <button class="link-btn" type="button" id="plans-reset">پاک کردن فیلترها</button>
+        </div>
+        <div class="grid grid-3" id="plans-grid"></div>
+        <div class="empty" id="plans-empty" hidden>
+          <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+          <h2 class="h4">طرحی با این فیلترها پیدا نشد</h2>
+          <p>فیلترها را تغییر دهید یا وقتی طرح جدید منتشر شد، باخبر شوید.</p>
+          <button class="btn btn--dark btn--sm" type="button" onclick="document.getElementById('plans-reset').click()">نمایش همه طرح‌ها</button>
+        </div>
+        <div class="note" style="margin-top:40px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span>سود نمایش‌داده‌شده «پیش‌بینی‌شده» است و تضمین‌شده نیست. سطح ریسک از ۱ (خیلی کم) تا ۵ (بالا) توسط تیم ارزیابی پرش تعیین می‌شود و دلایل آن در صفحه هر طرح آمده است.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="logo" href="index.html" aria-label="پرش">
+            <svg class="logo__mark" viewBox="0 0 120 96" fill="none" aria-hidden="true"><g stroke-width="18" stroke-linejoin="round"><path d="M-10 33H24L48 9H130"/><path d="M-10 59H36L60 35H130"/><path d="M-10 85H48L72 61H130"/></g></svg>
+            <span>پرش</span>
+          </a>
+          <p>سکوی تأمین مالی جمعی که سرمایه افراد را به نیاز مالی کسب‌وکارهای واقعی وصل می‌کند؛ روشن، دقیق و قابل پیگیری.</p>
+        </div>
+        <div class="footer-col">
+          <h3>سرمایه‌گذاران</h3>
+          <ul>
+            <li><a href="plans.html">طرح‌های فعال</a></li>
+            <li><a href="index.html#calculator">محاسبه سود</a></li>
+            <li><a href="index.html#how">راهنمای سرمایه‌گذاری</a></li>
+            <li><a href="index.html#faq">سؤالات متداول</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>کسب‌وکارها</h3>
+          <ul>
+            <li><a href="#">درخواست تأمین مالی</a></li>
+            <li><a href="#">شرایط پذیرش</a></li>
+            <li><a href="#">کارمزدها</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>پرش</h3>
+          <ul>
+            <li><a href="#">درباره ما</a></li>
+            <li><a href="#">مجوزها</a></li>
+            <li><a href="styleguide.html">سیستم طراحی</a></li>
+            <li><a href="#">قوانین و مقررات</a></li>
+            <li><a href="#">تماس با ما</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col--seals">
+          <h3>مجوزها</h3>
+          <div class="trust-seals">
+            <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>مجوز<br>فرابورس</div>
+            <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>نماد<br>اعتماد</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">۱۴۰۵</span> پرش. تمام حقوق محفوظ است.</span>
+        <span>سرمایه‌گذاری در طرح‌های تأمین مالی جمعی با ریسک همراه است. پیش از تصمیم، بخش ریسک‌های هر طرح را بخوانید.</span>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">پرش</div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

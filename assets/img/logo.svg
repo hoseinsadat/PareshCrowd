@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 96" fill="none" role="img" aria-labelledby="t">
+  <title id="t">Paresh</title>
+  <!-- Paresh mark: three stepped stripes. Approximated from the brand book; replace with the official vector. -->
+  <defs><clipPath id="c"><rect width="120" height="96"/></clipPath></defs>
+  <g clip-path="url(#c)" stroke="#0068FF" stroke-width="18" stroke-linejoin="round">
+    <path d="M-10 33H24L48 9H130"/>
+    <path d="M-10 59H36L60 35H130"/>
+    <path d="M-10 85H48L72 61H130"/>
+  </g>
+</svg>
